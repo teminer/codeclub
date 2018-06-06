@@ -5,12 +5,17 @@
 
 main {
   display: flex;
-  background: blue;
+  background: purple;
   height: 100vh;
 }
 
 h1 {
-  color: red;
+  color: orange;
   margin: auto;
   font-size: 72px;
+}
+h2 {
+  color: orange;
+  margin: auto;
+  font-size: 64px;
 }

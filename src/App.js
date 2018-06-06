@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import './App.css'
+// import cities from './city.list.json'
+
+const cities = [{ name: 'newcastle' }, { name: 'dubai' }]
 
 class App extends Component {
 
   state = {
-    name: 'Luke',
+    name: 'Tam'
   }
 
   fetchWeather = city => fetch(
@@ -24,11 +27,11 @@ class App extends Component {
     return (
       <main>
         <select onChange={e => this.fetchWeather(e.target.value)}>
+          {cities.slice(0,100).map(city => <option>{city.name}</option>)}
           <option value='london'>London</option>
-          <option value='newcastle'>Newcastle</option>
-          <option value='dubai'>Dubai</option>
         </select>
-        <h1>{this.state.temp}</h1>
+        <h2>{this.state.temp} Kelvin </h2> <br />
+        <h1>{Math.round(this.state.temp-273.15)} Celsius </h1>
       </main>
     )
   }
